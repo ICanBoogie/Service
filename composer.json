@@ -1,0 +1,32 @@
+{
+	"name": "icanboogie/service",
+	"type": "library",
+	"description": "A dependency-injection container agnostic service provider",
+	"keywords": [ "dependency", "injection", "provider" ],
+	"homepage": "http://icanboogie.org/",
+	"license": "BSD-3-Clause",
+	"authors": [
+		{
+			"name": "Olivier Laviale",
+			"email": "olivier.laviale@gmail.com",
+			"homepage": "https://olvlvl.com/",
+			"role" : "Developer"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/ICanBoogie/Service/issues",
+		"source": "https://github.com/ICanBoogie/Service"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"prefer-dist": true,
+	"require": {
+		"php": ">=5.6"
+	},
+	"autoload": {
+		"psr-4": {
+			"ICanBoogie\\Service\\": "lib/"
+		},
+		"files": [ "helpers.php" ]
+	}
+}
