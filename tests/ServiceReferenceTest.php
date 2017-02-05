@@ -42,6 +42,30 @@ class ServiceReferenceTest extends \PHPUnit_Framework_TestCase
 		$this->assertSame($prefix . $value . $suffix, $reference($prefix, $suffix));
 	}
 
+	public function testCall()
+	{
+		$service_id = uniqid();
+		$service = new SampleService();
+		$value = uniqid();
+
+		$provider = function ($id) use ($service_id, $service) {
+
+			if ($id === $service_id)
+			{
+				return $service;
+			}
+
+			return null;
+		};
+
+		ServiceProvider::define($provider);
+
+		/* @var $reference SampleService */
+
+		$reference = new ServiceReference($service_id);
+		$this->assertSame($value, $reference->do_something($value));
+	}
+
 	public function testHelper()
 	{
 		$id = uniqid();

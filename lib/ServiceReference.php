@@ -53,6 +53,15 @@ final class ServiceReference
 	}
 
 	/**
+	 * @param string $name
+	 * @param array $arguments
+	 */
+	public function __call($name, array $arguments)
+	{
+		return $this->resolve()->$name(...$arguments);
+	}
+
+	/**
 	 * @return object
 	 */
 	public function resolve()

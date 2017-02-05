@@ -28,5 +28,10 @@
 			"ICanBoogie\\Service\\": "lib/"
 		},
 		"files": [ "helpers.php" ]
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"ICanBoogie\\Service\\": "tests/"
+		}
 	}
 }
