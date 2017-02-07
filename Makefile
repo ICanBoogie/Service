@@ -2,6 +2,7 @@
 
 PACKAGE_NAME = icanboogie/service
 PACKAGE_VERSION = 0.1
+PHPUNIT=vendor/bin/phpunit
 
 # do not edit the following lines
 
@@ -18,11 +19,11 @@ autoload: vendor
 	@composer dump-autoload
 
 test: vendor
-	@phpunit
+	@$(PHPUNIT)
 
 test-coverage: vendor
 	@mkdir -p build/coverage
-	@phpunit --coverage-html build/coverage
+	@$(PHPUNIT) --coverage-html build/coverage
 
 doc: vendor
 	@mkdir -p build/docs
