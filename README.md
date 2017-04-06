@@ -1,10 +1,9 @@
 # Service
 
 [![Release](https://img.shields.io/packagist/v/ICanBoogie/Service.svg)](https://packagist.org/packages/ICanBoogie/Service)
-[![Build Status](https://img.shields.io/travis/ICanBoogie/Service/master.svg)](http://travis-ci.org/ICanBoogie/Service)
-[![HHVM](https://img.shields.io/hhvm/ICanBoogie/Service.svg)](http://hhvm.h4cc.de/package/ICanBoogie/Service)
-[![Code Quality](https://img.shields.io/scrutinizer/g/ICanBoogie/Service/master.svg)](https://scrutinizer-ci.com/g/ICanBoogie/Service)
-[![Code Coverage](https://img.shields.io/coveralls/ICanBoogie/Service/master.svg)](https://coveralls.io/r/ICanBoogie/Service)
+[![Build Status](https://img.shields.io/travis/ICanBoogie/Service.svg)](http://travis-ci.org/ICanBoogie/Service)
+[![Code Quality](https://img.shields.io/scrutinizer/g/ICanBoogie/Service.svg)](https://scrutinizer-ci.com/g/ICanBoogie/Service)
+[![Code Coverage](https://img.shields.io/coveralls/ICanBoogie/Service.svg)](https://coveralls.io/r/ICanBoogie/Service)
 [![Packagist](https://img.shields.io/packagist/dt/ICanBoogie/Service.svg)](https://packagist.org/packages/ICanBoogie/Service)
 
 The **ICanBoogie/Service** package provides means to reference, resolve, and invoke services using
@@ -114,8 +113,8 @@ clean` command.
 
 The package is continuously tested by [Travis CI](http://about.travis-ci.org/).
 
-[![Build Status](https://img.shields.io/travis/ICanBoogie/Service/master.svg)](http://travis-ci.org/ICanBoogie/Service)
-[![Code Coverage](https://img.shields.io/coveralls/ICanBoogie/Service/master.svg)](https://coveralls.io/r/ICanBoogie/Service)
+[![Build Status](https://img.shields.io/travis/ICanBoogie/Service.svg)](http://travis-ci.org/ICanBoogie/Service)
+[![Code Coverage](https://img.shields.io/coveralls/ICanBoogie/Service.svg)](https://coveralls.io/r/ICanBoogie/Service)
 
 
 
@@ -129,4 +128,4 @@ The package is continuously tested by [Travis CI](http://about.travis-ci.org/).
 
 
 
-[documentation]: http://api.icanboogie.org/service/latest/
+[documentation]: https://icanboogie.org/api/service/master/
