@@ -19,6 +19,16 @@ namespace ICanBoogie\Service;
 final class ServiceReference
 {
 	/**
+	 * @param array $properties
+	 *
+	 * @return ServiceReference
+	 */
+	static public function __set_state(array $properties)
+	{
+		return new self($properties['id']);
+	}
+
+	/**
 	 * @var string
 	 */
 	private $id;

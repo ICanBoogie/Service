@@ -6,8 +6,8 @@
 [![Code Coverage](https://img.shields.io/coveralls/ICanBoogie/Service.svg)](https://coveralls.io/r/ICanBoogie/Service)
 [![Packagist](https://img.shields.io/packagist/dt/ICanBoogie/Service.svg)](https://packagist.org/packages/ICanBoogie/Service)
 
-The **ICanBoogie/Service** package provides means to reference, resolve, and invoke services using
-your favorite dependency injection container, in the most transparent way possible.
+**ICanBoogie/Service** provides means to reference, resolve, and invoke services using your favorite
+dependency injection container, in the most transparent way possible.
 
 Please, consider the following example:
 
@@ -42,16 +42,56 @@ echo $reference("Madonna");
 // Hello Madonna! 
 ```
 
+
+
+
+
+## References are callables
+
 Service references created with `ref` are especially useful when you need to provide a callable
 but you don't want that callable to be instantiated right away:
 
-```
+```php
 <?php
 
 use function ICanBoogie\Service\ref;
 
+class Compute
+{
+	public function __construct(callable $computer)
+	{
+		// …
+	}
+
+	// …
+}
+
 $compute = new Compute(ref('expansive_instance'));
 ```
+
+
+
+
+
+## References can be exported
+
+[ServiceReference][] instances can safely be exported with `var_export()`:
+
+```php
+<?php
+
+use ICanBoogie\Service\ServiceReference;
+
+$id = 'my_service';
+$reference = new ServiceReference($id);
+$dump = var_export($reference, true);
+
+$r = eval("return $dump;");
+
+echo get_class($r);   // ICanBoogie\Service\ServiceReference 
+echo (string) $r;     // my_service
+```
+
 
 
 
@@ -74,9 +114,7 @@ The package requires PHP 5.6 or later.
 
 The recommended way to install this package is through [Composer](http://getcomposer.org/):
 
-```
-$ composer require ICanBoogie/Service
-```
+	$ composer require ICanBoogie/Service
 
 
 
@@ -84,7 +122,8 @@ $ composer require ICanBoogie/Service
 
 ### Cloning the repository
 
-The package is [available on GitHub](https://github.com/ICanBoogie/Service), its repository can be cloned with the following command line:
+The package is [available on GitHub](https://github.com/ICanBoogie/Service), its repository can be
+cloned with the following command line:
 
 	$ git clone https://github.com/ICanBoogie/Service.git
 
@@ -128,4 +167,5 @@ The package is continuously tested by [Travis CI](http://about.travis-ci.org/).
 
 
 
-[documentation]: https://icanboogie.org/api/service/master/
+[documentation]:    https://icanboogie.org/api/service/master/
+[ServiceReference]: https://icanboogie.org/api/service/master/class-ICanBoogie.Service.ServiceReference.html

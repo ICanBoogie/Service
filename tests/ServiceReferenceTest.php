@@ -13,6 +13,18 @@ namespace ICanBoogie\Service;
 
 class ServiceReferenceTest extends \PHPUnit_Framework_TestCase
 {
+	public function testDump()
+	{
+		$id = uniqid();
+		$reference = new ServiceReference($id);
+		$dump = var_export($reference, true);
+
+		$r = eval("return $dump;");
+
+		$this->assertInstanceOf(ServiceReference::class, $r);
+		$this->assertSame($id, (string) $r);
+	}
+
 	public function testServiceReference()
 	{
 		$value = uniqid();
