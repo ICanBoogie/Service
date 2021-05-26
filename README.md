@@ -1,7 +1,6 @@
 # Service
 
 [![Release](https://img.shields.io/packagist/v/ICanBoogie/Service.svg)](https://packagist.org/packages/ICanBoogie/Service)
-[![Build Status](https://img.shields.io/travis/ICanBoogie/Service.svg)](http://travis-ci.org/ICanBoogie/Service)
 [![Code Quality](https://img.shields.io/scrutinizer/g/ICanBoogie/Service.svg)](https://scrutinizer-ci.com/g/ICanBoogie/Service)
 [![Code Coverage](https://img.shields.io/coveralls/ICanBoogie/Service.svg)](https://coveralls.io/r/ICanBoogie/Service)
 [![Packagist](https://img.shields.io/packagist/dt/ICanBoogie/Service.svg)](https://packagist.org/packages/ICanBoogie/Service)
@@ -39,7 +38,7 @@ $reference = ref('hello');
 echo $reference;
 // hello
 echo $reference("Madonna");
-// Hello Madonna! 
+// Hello Madonna!
 ```
 
 
@@ -88,7 +87,7 @@ $dump = var_export($reference, true);
 
 $r = eval("return $dump;");
 
-echo get_class($r);   // ICanBoogie\Service\ServiceReference 
+echo get_class($r);   // ICanBoogie\Service\ServiceReference
 echo (string) $r;     // my_service
 ```
 
@@ -150,10 +149,7 @@ installs dependencies as required. The `make test-coverage` command runs test su
 an HTML coverage report in `build/coverage`. The directory can later be cleaned with the `make
 clean` command.
 
-The package is continuously tested by [Travis CI](http://about.travis-ci.org/).
-
-[![Build Status](https://img.shields.io/travis/ICanBoogie/Service.svg)](http://travis-ci.org/ICanBoogie/Service)
-[![Code Coverage](https://img.shields.io/coveralls/ICanBoogie/Service.svg)](https://coveralls.io/r/ICanBoogie/Service)
+The package is continuously tested by [GitHub actions](https://github.com/ICanBoogie/Service/actions).
 
 
 

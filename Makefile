@@ -37,7 +37,6 @@ test-coveralls: all
 	@mkdir -p build/logs
 	COMPOSER_ROOT_VERSION=$(PACKAGE_VERSION) composer require satooshi/php-coveralls
 	@$(PHPUNIT) --coverage-clover build/logs/clover.xml
-	php vendor/bin/coveralls -v
 
 doc: vendor
 	@mkdir -p build/docs
