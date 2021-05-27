@@ -11,7 +11,7 @@
 
 namespace ICanBoogie\Service;
 
-class ServiceReferenceTest extends \PHPUnit_Framework_TestCase
+class ServiceReferenceTest extends \PHPUnit\Framework\TestCase
 {
 	public function testDump()
 	{

@@ -11,7 +11,7 @@
 
 namespace ICanBoogie\Service;
 
-class ServiceProviderTest extends \PHPUnit_Framework_TestCase
+class ServiceProviderTest extends \PHPUnit\Framework\TestCase
 {
 	public function testServiceProvider()
 	{
