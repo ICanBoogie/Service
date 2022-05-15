@@ -12,13 +12,9 @@
 namespace ICanBoogie\Service;
 
 /**
- * Create a service reference.
- *
- * @param string $id
- *
- * @return ServiceReference
+ * Creates a service reference.
  */
-function ref($id)
+function ref(string $id): ServiceReference
 {
 	return new ServiceReference($id);
 }

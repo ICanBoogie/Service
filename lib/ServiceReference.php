@@ -19,11 +19,9 @@ namespace ICanBoogie\Service;
 final class ServiceReference
 {
 	/**
-	 * @param array $properties
-	 *
-	 * @return ServiceReference
+	 * @param array<string, mixed> $properties
 	 */
-	static public function __set_state(array $properties)
+	static public function __set_state(array $properties): ServiceReference
 	{
 		return new self($properties['id']);
 	}
@@ -36,7 +34,7 @@ final class ServiceReference
 	/**
 	 * @param string $id Service identifier
 	 */
-	public function __construct($id)
+	public function __construct(string $id)
 	{
 		$this->id = $id;
 	}
@@ -65,16 +63,15 @@ final class ServiceReference
 	/**
 	 * @param string $name
 	 * @param array $arguments
+	 *
+	 * @return mixed
 	 */
-	public function __call($name, array $arguments)
+	public function __call(string $name, array $arguments)
 	{
 		return $this->resolve()->$name(...$arguments);
 	}
 
-	/**
-	 * @return object
-	 */
-	public function resolve()
+	public function resolve(): object
 	{
 		return ServiceProvider::provide($this->id);
 	}

@@ -11,7 +11,7 @@
 
 namespace ICanBoogie\Service;
 
-class ServiceProvider
+final class ServiceProvider
 {
 	/**
 	 * @var callable
@@ -21,11 +21,9 @@ class ServiceProvider
 	/**
 	 * Define the service provider.
 	 *
-	 * @param callable $provider
-	 *
-	 * @return callable The previous provider, or `null` if none was defined.
+	 * @return callable|null The previous provider, or `null` if none was defined.
 	 */
-	static public function define(callable $provider)
+	static public function define(callable $provider): ?callable
 	{
 		$previous = self::$provider;
 
@@ -36,10 +34,8 @@ class ServiceProvider
 
 	/**
 	 * Return the current provider.
-	 *
-	 * @return callable|null
 	 */
-	static public function defined()
+	static public function defined(): ?callable
 	{
 		return self::$provider;
 	}
@@ -47,7 +43,7 @@ class ServiceProvider
 	/**
 	 * Undefine the provider.
 	 */
-	static public function undefine()
+	static public function undefine(): void
 	{
 		self::$provider = null;
 	}
@@ -56,10 +52,8 @@ class ServiceProvider
 	 * Return a service.
 	 *
 	 * @param string $id Service identifier.
-	 *
-	 * @return mixed
 	 */
-	static public function provide($id)
+	static public function provide(string $id): object
 	{
 		$provider = self::$provider;
 
