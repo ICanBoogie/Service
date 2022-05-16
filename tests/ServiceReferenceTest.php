@@ -11,7 +11,9 @@
 
 namespace ICanBoogie\Service;
 
-class ServiceReferenceTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+
+class ServiceReferenceTest extends TestCase
 {
 	public function testDump()
 	{
@@ -56,11 +58,13 @@ class ServiceReferenceTest extends \PHPUnit\Framework\TestCase
 
 	public function testCall()
 	{
+		$n = 0;
 		$service_id = uniqid();
 		$service = new SampleService();
 		$value = uniqid();
 
-		$provider = function ($id) use ($service_id, $service) {
+		$provider = function ($id) use ($service_id, $service, &$n) {
+			$n++;
 
 			if ($id === $service_id)
 			{
@@ -76,6 +80,9 @@ class ServiceReferenceTest extends \PHPUnit\Framework\TestCase
 
 		$reference = new ServiceReference($service_id);
 		$this->assertSame($value, $reference->do_something($value));
+		$this->assertEquals(1, $n);
+		$this->assertSame($value, $reference->do_something($value));
+		$this->assertEquals(1, $n);
 	}
 
 	public function testHelper()

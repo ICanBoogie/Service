@@ -48,6 +48,11 @@ final class ServiceReference
 	}
 
 	/**
+	 * @var object|null
+	 */
+	private $service = null;
+
+	/**
 	 * @param array ...$args
 	 *
 	 * @return mixed
@@ -73,6 +78,6 @@ final class ServiceReference
 
 	public function resolve(): object
 	{
-		return ServiceProvider::provide($this->id);
+		return $this->service ?: $this->service = ServiceProvider::provide($this->id);
 	}
 }
